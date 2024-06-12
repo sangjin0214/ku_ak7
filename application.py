@@ -28,7 +28,7 @@ def rental_result():
     return template
 
 
-@applicatoin.route("/pw_change", methods=['POST'])
+@application.route("/pw_change", methods=['POST'])
 def pw_change():
     id = request.form['student_id']
     template = pw_change.enter_pw(id)
