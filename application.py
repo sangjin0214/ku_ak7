@@ -8,7 +8,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def main_page():
-    return os.listdir('./')
+    return os.listdir('./src/')
 
 '''
 @application.route("/subcharger_rental/<subcharger_id>")
