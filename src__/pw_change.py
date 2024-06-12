@@ -1,6 +1,6 @@
 import gspread
 
-account = gspread.service_account(filename='/content/cloud-storage-426206-0531416cc0fd.json')
+account = gspread.service_account(filename='./lib/cloud-storage-426206-0531416cc0fd.json')
 f = account.open('cloud_storage')
 
 
