@@ -1,18 +1,12 @@
 from flask import Flask, request#, send_file
 #from src import subcharger_rental, pw_change
-import os, sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
-
-from subcharger_rental import rental
-from pw_change import enter_pw
 
 application = Flask(__name__)
 
 
 @application.route("/")
 def main_page():
-    return os.listdir('./src/')
+    return "EOM"
 
 '''
 @application.route("/subcharger_rental/<subcharger_id>")
