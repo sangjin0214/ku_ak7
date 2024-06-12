@@ -1,10 +1,12 @@
 from flask import Flask, request#, send_file
-from src import subcharger_rental, pw_change
+#from src import subcharger_rental, pw_change
+import os
 
+print(os.listdir(./))
 
 application = Flask(__name__)
 
-
+'''
 @application.route("/")
 def main_page():
     return "Eom's Lab"
@@ -61,7 +63,7 @@ def browse():
     phone_num = request.form['phone_num']
     template = check_info.check(phone_num)
     return template
-   
+'''   
 
 if __name__ == '__main__':
     application.run()
