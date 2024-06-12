@@ -2,7 +2,7 @@ from flask import Flask, request#, send_file
 #from src import subcharger_rental, pw_change
 import os
 
-print(os.listdir(./))
+print(os.listdir('./'))
 
 application = Flask(__name__)
 
