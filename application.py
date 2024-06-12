@@ -8,7 +8,7 @@ application = Flask(__name__)
 def main_page():
     return "EOM"
 
-'''
+
 @application.route("/subcharger_rental/<subcharger_id>")
 def rental_page(subcharger_id):
     template = subcharger_rental.rental(subcharger_id)
@@ -60,7 +60,7 @@ def browse():
     phone_num = request.form['phone_num']
     template = check_info.check(phone_num)
     return template
-'''   
+   
 
 if __name__ == '__main__':
     application.run()
