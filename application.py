@@ -2,14 +2,14 @@ from flask import Flask, request#, send_file
 from src import subcharger_rental, pw_change
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route("/")
+@application.route("/")
 def main_page():
     return "Eom's Lab"
 
-'''
+
 @application.route("/subcharger_rental/<subcharger_id>")
 def rental_page(subcharger_id):
     template = subcharger_rental.rental(subcharger_id)
@@ -61,7 +61,7 @@ def browse():
     phone_num = request.form['phone_num']
     template = check_info.check(phone_num)
     return template
-    '''
+    
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
