@@ -1,4 +1,3 @@
 flask
 uwsgi
-gspread
-#FFmpeg
+gunicorn
