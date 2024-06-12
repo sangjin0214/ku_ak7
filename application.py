@@ -1,9 +1,11 @@
 from flask import Flask, request#, send_file
-from src import subcharger_rental, pw_change
+#from src import subcharger_rental, pw_change
 import os, sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
 
+from subcharger_rental import rental
+from pw_change import enter_pw
 
 application = Flask(__name__)
 
