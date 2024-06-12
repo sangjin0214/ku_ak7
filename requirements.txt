@@ -1,0 +1,4 @@
+flask
+uwsgi
+gspread
+#FFmpeg
