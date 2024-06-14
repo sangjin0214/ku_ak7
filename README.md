@@ -1,7 +1,7 @@
 # ku_ak7
 
 고려대학교 사회학과 학생회 집행부 사업에서 사용하는 웹입니다.
-[학생회 인스타그램](https://www.instagram.com/ku_ak7/, "악칠반 학생회 인스타그램")
+사회학과 악칠반 학생회 : [학생회 인스타그램](https://www.instagram.com/ku_ak7/, "악칠반 학생회 인스타그램")
 
 코드에 대한 저작권은 23학번 엄상진에게 있으며 문의는 아래 인스타그램 계정에 DM 부탁드립니다.
-[개발자 인스타그램](https://www.instagram.com/eomsj_214/, "개발자 인스타그램")
+개발자 : [개발자 인스타그램](https://www.instagram.com/eomsj_214/, "개발자 인스타그램")
