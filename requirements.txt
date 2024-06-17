@@ -2,3 +2,5 @@ flask
 uwsgi
 gunicorn
 gspread
+dotenv
+os
