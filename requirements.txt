@@ -3,4 +3,3 @@ uwsgi
 gunicorn
 gspread
 dotenv
-os
