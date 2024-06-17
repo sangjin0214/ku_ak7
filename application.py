@@ -1,5 +1,7 @@
-from flask import Flask, request#, send_file
-from src import subcharger_rental, pw_change
+from flask import Flask, request
+from src import subcharger_rental, pw_change, root_function
+from dotenv import load_dotenv
+import os
 
 application = Flask(__name__)
 
@@ -45,22 +47,38 @@ def pw_change_result():
     else:
         template = pw_change.success_change(id, pw)
     return template
-
-
-@application.route("/application_confirm/")
-def entry():
-    template = ""
-    with open("./src/search_.html", "r") as t:
-        template = t.read()
-    return template
-
-
-@application.route("/application_confirm/browse_info", methods=['POST'])
-def browse():
-    phone_num = request.form['phone_num']
-    template = check_info.check(phone_num)
-    return template
    
+
+@application.route("/root/login")
+def root_login():
+    template = root_function.root_login()
+    return template
+
+
+@application.route("/root/login_result", methods=['POST'])
+def root_login_result():
+    load_dotenv()
+    ROOT_PASSWORD = os.getenv('ROOT_PASSWORD')
+    pw = request.form['password']
+    if pw == ROOT_PASSWORD:
+        template = root_funciton.login_success()
+    else:
+        template = root_function.login_fail()
+    return template
+
+
+@application.route("/root/rental_state")
+def rental_state():
+    template = root_function.rental_state()
+    return template
+
+
+@application.route("/root/login/pw_check", method=['POST'])
+def pw_check():
+    user_id = request.form['user_id']
+    template = root_function.pw_check(user_id)
+    return template
+    
 
 if __name__ == '__main__':
     application.run()
