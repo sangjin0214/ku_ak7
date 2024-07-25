@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from src import subcharger_rental, pw_change, root_function
 from dotenv import load_dotenv
 import os
@@ -67,16 +67,26 @@ def root_login_result():
     return template
 
 
-@application.route("/root/rental_state")
+@application.route("/root/rental_state", methods=['POST'])
 def rental_state():
-    template = root_function.rental_state()
+    root_login = request.form['root_login']
+    if root_login == 1:
+        template = root_function.rental_state()
+    else:
+        template = '잘못된 접근입니다.'
     return template
 
 
-@application.route("/root/login/pw_check", method=['POST'])
+@application.route("/root/login/pw_check", method=['GET', 'POST'])
 def pw_check():
-    user_id = request.form['user_id']
-    template = root_function.pw_check(user_id)
+    root_login = request.form['root_login']
+    user_id = ''
+    if root_login == 1:
+        if request.method == 'POST':
+            user_id = request.form['user_id']
+            template = render_template('./src/pw_check.html', message=root_function.pw_check(user_id))
+    else:
+        template = '<h1>잘못된 접근입니다.</h1>'
     return template
     
 
