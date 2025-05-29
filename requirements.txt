@@ -1,0 +1,5 @@
+flask
+uwsgi
+gspread
+google-auth
+oauth2client
